@@ -17,17 +17,18 @@
     "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "7.1.0",
     "html-webpack-plugin": "^2.30.1",
-    "webpack": "^3.5.1",
+    "webpack": "^3.5.4",
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
+    "phaser": "^2.6.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-hot-loader": "^1.3.1"
+    "react-hot-loader": "next"
   },
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --hot --history-api-fallback --open"
+    "dev": "webpack-dev-server"
   }
 }

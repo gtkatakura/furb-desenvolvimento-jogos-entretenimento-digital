@@ -2,19 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
-import Root from './components/Root.jsx';
+import Root from './components/Root';
 
-const render = (Component) => {
+const render = Component => {
   ReactDOM.render(
     <AppContainer>
-      <Component />
+      <Component>Ola</Component>
     </AppContainer>,
-    document.getElementById('root'),
+    document.getElementById('app'),
   );
 };
 
 render(Root);
 
 if (module.hot) {
-  module.hot.accept('./components/Root.jsx', () => { render(Root); });
+  module.hot.accept('./components/Root', () => { render(Root); });
 }
