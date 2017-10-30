@@ -1,9 +1,9 @@
 import React from 'react';
-import Game from './Game';
+import Game from '../domain/Game';
 
 const Root = () => {
   global.game = new Game();
-  return <h1>Hello World!</h1>;
+  return <span></span>;
 };
 
 export default Root;
