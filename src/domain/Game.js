@@ -16,6 +16,9 @@ class BootState extends Phaser.State {
     }
     
     preload() {
+        this.load.tilemap('mapName', 'assets/phases/Fase1.json', null, Phaser.Tilemap.TILED_JSON);
+        this.load.image('dungeon', 'assets/map/dungeon.png');
+
         this.load.spritesheet('rogue_run', 'assets/characteres/rogue/sprite.png', 32, 32);
     }
 
@@ -24,6 +27,10 @@ class BootState extends Phaser.State {
         this.player.animations.add('run', [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]);
         this.player.anchor.setTo(0.5);
 
+        const map = this.add.tilemap('mapName');
+        map.addTilesetImage('dungeon', 'dungeon');
+        const layer = map.createLayer('Chao');
+        layer.resizeWorld();
     }
 
     update() {
