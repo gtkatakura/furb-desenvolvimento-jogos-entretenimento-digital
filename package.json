@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
+    "lodash": "^4.17.4",
     "phaser-ce": "^2.8.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

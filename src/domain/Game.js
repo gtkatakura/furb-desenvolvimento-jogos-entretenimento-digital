@@ -2,6 +2,8 @@ import 'pixi';
 import 'p2';
 import Phaser from 'phaser';
 
+import _ from 'lodash';
+
 class BootState extends Phaser.State {
     init() {
         this.stage.backgroundColor = '#EDEEC9';
@@ -19,37 +21,69 @@ class BootState extends Phaser.State {
         this.load.tilemap('mapName', 'assets/phases/Fase1.json', null, Phaser.Tilemap.TILED_JSON);
         this.load.image('dungeon', 'assets/map/dungeon.png');
 
-        this.load.spritesheet('rogue_run', 'assets/characteres/rogue/sprite.png', 32, 32);
+        this.load.spritesheet('rogue', 'assets/characteres/rogue/sprite.png', 32, 32);
+        this.load.text("level1", 'assets/phases/Fase1.json');
     }
 
     create() {
-        this.player = this.add.sprite(32 / 2, 32 / 2, 'rogue_run');
-        this.player.animations.add('run', [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]);
-        this.player.anchor.setTo(0.5);
+        const phase = this.add.tilemap('mapName');
+        phase.addTilesetImage('dungeon', 'dungeon');
 
-        const map = this.add.tilemap('mapName');
-        map.addTilesetImage('dungeon', 'dungeon');
-        const layer = map.createLayer('Chao');
-        layer.resizeWorld();
+        // const level = JSON.parse(this.game.cache.getText("level1"));
+
+        this.layers = {};
+        
+        for (let layer of phase.layers) {
+            this.layers[layer.name] = phase.createLayer(layer.name);
+
+            if (layer.properties.collision) { // collision layer
+                const indexes = _(layer.data)
+                    .flatten()
+                    .flatMap('index')
+                    .uniq()
+                    .filter(index => index > 0)
+                    .value();
+
+                phase.setCollision(indexes, true, layer.name);
+            }
+        }
+
+        this.layers[phase.layer.name].resizeWorld();
+
+        for (let [name, objects] of Object.entries(phase.objects)) {
+            for (let object of objects) {
+                this.player = this.add.sprite(object.x, object.y, object.properties.texture);
+                this.player.animations.add('run', [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]);
+                this.player.anchor.setTo(0.5);
+                this.game.physics.arcade.enable(this.player);
+            }
+        }
     }
 
     update() {
+        this.game.physics.arcade.collide(this.player, this.layers.collision);
+
         if (this.cursors.right.isDown) {
+            debugger
             this.player.scale.setTo(1, 1);
-            this.player.x += 2;
+            this.player.body.velocity.x = 100;
             this.player.animations.play('run', 20);
         } else if (this.cursors.left.isDown) {
             this.player.scale.setTo(-1, 1);
-            this.player.x -= 2;
+            this.player.body.velocity.x = -100;
             this.player.animations.play('run', 20);
+        } else {
+            this.player.body.velocity.x = 0;
         }
         
         if (this.cursors.down.isDown) {
-            this.player.y += 2;
+            this.player.body.velocity.y = 100;
             this.player.animations.play('run', 20);
         } else if (this.cursors.up.isDown) {
-            this.player.y -= 2;
+            this.player.body.velocity.y = -100;
             this.player.animations.play('run', 20);
+        } else {
+            this.player.body.velocity.y = 0;
         }
     }
 }
