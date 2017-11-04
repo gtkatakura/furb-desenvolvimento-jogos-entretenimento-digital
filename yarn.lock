@@ -1839,6 +1839,10 @@ expand-range@^1.8.1:
   dependencies:
     fill-range "^2.1.0"
 
+expose-loader@^0.7.3:
+  version "0.7.3"
+  resolved "https://registry.yarnpkg.com/expose-loader/-/expose-loader-0.7.3.tgz#35fbd3659789e4faa81f59de8b7e9fc39e466d51"
+
 express@^4.13.3:
   version "4.15.4"
   resolved "https://registry.yarnpkg.com/express/-/express-4.15.4.tgz#032e2253489cf8fce02666beca3d11ed7a2daed1"
@@ -3283,9 +3287,9 @@ performance-now@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-0.2.0.tgz#33ef30c5c77d4ea21c5a53869d91b56d8f2555e5"
 
-phaser@^2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/phaser/-/phaser-2.6.2.tgz#eb39121725a2149c49f46b5d144318c22bc09249"
+phaser-ce@^2.8.4:
+  version "2.8.4"
+  resolved "https://registry.yarnpkg.com/phaser-ce/-/phaser-ce-2.8.4.tgz#a724a698f881e21d6f78d491f44bcf430a6f7ac8"
 
 pify@^2.0.0, pify@^2.3.0:
   version "2.3.0"
