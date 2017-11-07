@@ -6,7 +6,7 @@
          "name":"background",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":30,
          "x":0,
          "y":0
@@ -44,20 +44,20 @@
                  "name":"",
                  "properties":
                     {
-                     "goingTo":"level2",
-                     "group":"doors"
+                     "group":"doors",
+                     "targetLevel":"level2"
                     },
                  "propertytypes":
                     {
-                     "goingTo":"string",
-                     "group":"string"
+                     "group":"string",
+                     "targetLevel":"string"
                     },
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":32,
                  "x":480,
-                 "y":96
+                 "y":64
                 }],
          "opacity":1,
          "properties":
@@ -89,7 +89,7 @@
              "collision":"bool"
             },
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":30,
          "x":0,
          "y":0
@@ -108,7 +108,7 @@
              "collision":"bool"
             },
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":30,
          "x":0,
          "y":0
@@ -119,7 +119,7 @@
          "name":"walkable",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":30,
          "x":0,
          "y":0
@@ -130,7 +130,7 @@
          "name":"doors",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":30,
          "x":0,
          "y":0
@@ -141,7 +141,7 @@
          "name":"decoration",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":30,
          "x":0,
          "y":0
@@ -152,7 +152,7 @@
          "name":"details",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":30,
          "x":0,
          "y":0
