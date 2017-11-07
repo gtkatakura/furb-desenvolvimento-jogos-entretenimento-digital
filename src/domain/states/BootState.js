@@ -1,4 +1,4 @@
-import Phaser from 'phaser';
+import Phaser from 'phaser-ce';
 import LoadingState from './LoadingState';
 
 export default class BootState extends Phaser.State {

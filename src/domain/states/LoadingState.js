@@ -1,6 +1,7 @@
-import Phaser from 'phaser';
-
+import Phaser from 'phaser-ce';
 import _ from 'lodash';
+
+import PrefabFactory from '../prefabs/PrefabFactory';
 
 export default class LoadingState extends Phaser.State {
   init(level) {
@@ -14,6 +15,11 @@ export default class LoadingState extends Phaser.State {
       left: this.game.input.keyboard.addKey(Phaser.Keyboard.A),
       right: this.game.input.keyboard.addKey(Phaser.Keyboard.D),
     };
+
+    this.prefabs = {};
+    this.groups = {};
+    this.layers = {};
+    this.collisions = [];
   }
 
   preload() {
@@ -40,9 +46,6 @@ export default class LoadingState extends Phaser.State {
       phase.addTilesetImage(tileset.name, tileset.name);
     }
 
-    this.layers = {};
-    this.collisions = [];
-
     for (const layer of phase.layers) {
       this.layers[layer.name] = phase.createLayer(layer.name);
 
@@ -60,68 +63,27 @@ export default class LoadingState extends Phaser.State {
       }
     }
 
-    this.layers[phase.layer.name].resizeWorld();
-
-    this.groups = {};
+    this.layers[this.phase.layer.name].resizeWorld();
 
     for (const objects of Object.values(phase.objects)) {
       for (const object of objects) {
-        this.groups[object.properties.group] = this.groups[object.properties.group] || this.game.add.group();
+        const prefab = PrefabFactory({
+          state: this,
+          object,
+        });
 
-        if (object.properties.group === 'players') {
-          this.player = this.add.sprite(object.x, object.y, object.properties.texture);
-          this.player.animations.add('run', [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]);
-          this.player.anchor.setTo(0.5);
-          this.game.physics.arcade.enable(this.player);
-        } else {
-          this.door = _.assign(this.add.sprite(object.x, object.y), {
-            properties: object.properties,
-          });
-
-          this.game.physics.arcade.enable(this.door);
-
-          this.groups[object.properties.group].add(this.door);
-        }
+        this.game.add.existing(prefab);
       }
     }
   }
 
-  nextPhase(player, door) {
-    this.phase.destroy();
-    this.game.state.start('BootState', true, true, door.properties.goingTo);
-  }
-
-  update() {
-    for (const collision of this.collisions) {
-      this.game.physics.arcade.collide(this.player, collision);
+  group(name) {
+    if (!this.groups[name]) {
+      this.groups[name] = _.assign(this.game.add.group(), {
+        objects: [],
+      });
     }
 
-    if (!this.player.body) {
-      return;
-    }
-
-    if (this.cursors.right.isDown) {
-      this.player.scale.setTo(1, 1);
-      this.player.body.velocity.x = 100;
-      this.player.animations.play('run', 20);
-    } else if (this.cursors.left.isDown) {
-      this.player.scale.setTo(-1, 1);
-      this.player.body.velocity.x = -100;
-      this.player.animations.play('run', 20);
-    } else {
-      this.player.body.velocity.x = 0;
-    }
-
-    if (this.cursors.down.isDown) {
-      this.player.body.velocity.y = 100;
-      this.player.animations.play('run', 20);
-    } else if (this.cursors.up.isDown) {
-      this.player.body.velocity.y = -100;
-      this.player.animations.play('run', 20);
-    } else {
-      this.player.body.velocity.y = 0;
-    }
-
-    this.game.physics.arcade.overlap(this.player, this.groups.doors, this.nextPhase.bind(this), null, this.player);
+    return this.groups[name];
   }
 }
