@@ -3,7 +3,7 @@ import Game from '../domain/Game';
 
 const Root = () => {
   global.game = new Game();
-  return <span></span>;
+  return <span />;
 };
 
 export default Root;
