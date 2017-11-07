@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 
 import _ from 'lodash';
 
-class LoadingState extends Phaser.State {
+export default class LoadingState extends Phaser.State {
   init(level) {
     this.level = level;
 
@@ -34,6 +34,7 @@ class LoadingState extends Phaser.State {
 
   create() {
     const phase = this.add.tilemap(this.level.name);
+    this.phase = phase;
 
     for (const tileset of phase.tilesets) {
       phase.addTilesetImage(tileset.name, tileset.name);
@@ -61,19 +62,42 @@ class LoadingState extends Phaser.State {
 
     this.layers[phase.layer.name].resizeWorld();
 
+    this.groups = {};
+
     for (const objects of Object.values(phase.objects)) {
       for (const object of objects) {
-        this.player = this.add.sprite(object.x, object.y, object.properties.texture);
-        this.player.animations.add('run', [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]);
-        this.player.anchor.setTo(0.5);
-        this.game.physics.arcade.enable(this.player);
+        this.groups[object.properties.group] = this.groups[object.properties.group] || this.game.add.group();
+
+        if (object.properties.group === 'players') {
+          this.player = this.add.sprite(object.x, object.y, object.properties.texture);
+          this.player.animations.add('run', [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]);
+          this.player.anchor.setTo(0.5);
+          this.game.physics.arcade.enable(this.player);
+        } else {
+          this.door = _.assign(this.add.sprite(object.x, object.y), {
+            properties: object.properties,
+          });
+
+          this.game.physics.arcade.enable(this.door);
+
+          this.groups[object.properties.group].add(this.door);
+        }
       }
     }
+  }
+
+  nextPhase(player, door) {
+    this.phase.destroy();
+    this.game.state.start('BootState', true, true, door.properties.goingTo);
   }
 
   update() {
     for (const collision of this.collisions) {
       this.game.physics.arcade.collide(this.player, collision);
+    }
+
+    if (!this.player.body) {
+      return;
     }
 
     if (this.cursors.right.isDown) {
@@ -97,7 +121,7 @@ class LoadingState extends Phaser.State {
     } else {
       this.player.body.velocity.y = 0;
     }
+
+    this.game.physics.arcade.overlap(this.player, this.groups.doors, this.nextPhase.bind(this), null, this.player);
   }
 }
-
-export default LoadingState;
