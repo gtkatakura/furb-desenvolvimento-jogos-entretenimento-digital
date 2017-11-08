@@ -13,6 +13,7 @@ export default class Player extends Prefab {
     };
 
     this.animations.add('run', [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]);
+    this.game.camera.follow(this);
   }
 
   enterDoor(player, door) {

@@ -6,8 +6,8 @@ import BootState from './states/BootState';
 import LoadingState from './states/LoadingState';
 
 export default class Game extends Phaser.Game {
-  constructor() {
-    super(960, 960, Phaser.CANVAS, 'content');
+  constructor({ width, height }) {
+    super(width, height, Phaser.CANVAS, 'game', null, true);
 
     this.state.add(BootState.name, BootState, false);
     this.state.add(LoadingState.name, LoadingState, false);
