@@ -3,5 +3,5 @@
     ["env", { "modules": false }],
     "react"
   ],
-  "plugins": ["transform-runtime"]
+  "plugins": ["react-hot-loader/babel", "transform-runtime"]
 }

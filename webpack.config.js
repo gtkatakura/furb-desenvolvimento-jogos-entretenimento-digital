@@ -12,6 +12,7 @@ module.exports = {
   entry: {
     app: [
       'babel-polyfill',
+      'react-hot-loader/patch',
       './src/index',
     ],
     vendor: ['pixi', 'p2', 'phaser-ce'],
