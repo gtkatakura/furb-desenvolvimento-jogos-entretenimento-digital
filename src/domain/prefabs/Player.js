@@ -17,7 +17,7 @@ export default class Player extends Prefab {
 
   enterDoor(player, door) {
     this.state.phase.destroy();
-    this.game.state.start('BootState', true, false, door.properties.goingTo);
+    this.game.state.start('BootState', true, false, door.properties.targetLevel);
   }
 
   update() {
