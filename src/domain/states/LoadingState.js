@@ -32,7 +32,7 @@ export default class LoadingState extends Phaser.State {
 
     for (const tileset of this.level.data.tilesets) {
       const source = tileset.image.replace('..', 'assets');
-      this.load.image(tileset.name, source);
+      this.load.spritesheet(tileset.name, source, 32, 32);
     }
 
     this.load.spritesheet('rogue', 'assets/characteres/rogue/sprite.png', 32, 32);
@@ -82,6 +82,8 @@ export default class LoadingState extends Phaser.State {
       this.groups[name] = _.assign(this.game.add.group(), {
         objects: [],
       });
+
+      this.groups[name].enableBody = true;
     }
 
     return this.groups[name];
