@@ -1,5 +1,5 @@
-import Phaser from 'phaser-ce';
 import Prefab from './Prefab';
+import KeyboardFactory from './player/KeyboardFactory';
 
 export default class Player extends Prefab {
   constructor(...params) {
@@ -8,13 +8,7 @@ export default class Player extends Prefab {
     this.anchor.setTo(0.5);
     this.body.immovable = false;
 
-    this.cursors = {
-      up: this.game.input.keyboard.addKey(Phaser.Keyboard.W),
-      down: this.game.input.keyboard.addKey(Phaser.Keyboard.S),
-      left: this.game.input.keyboard.addKey(Phaser.Keyboard.A),
-      right: this.game.input.keyboard.addKey(Phaser.Keyboard.D),
-      enter: this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER),
-    };
+    this.keyboard = KeyboardFactory(this.game.input.keyboard);
 
     this.animations.add('run', [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]);
     this.game.camera.follow(this);
@@ -26,7 +20,7 @@ export default class Player extends Prefab {
   }
 
   openGate(gate) {
-    if (this.state.game.physics.arcade.distanceBetween(this, gate) < this.height && this.cursors.enter.isDown) {
+    if (this.state.game.physics.arcade.distanceBetween(this, gate) < this.height && this.keyboard.enter.isDown) {
       this.killGate(gate);
     }
   }
@@ -53,11 +47,11 @@ export default class Player extends Prefab {
       this.openGate(gate);
     }
 
-    if (this.cursors.right.isDown) {
+    if (this.keyboard.right.isDown) {
       this.scale.setTo(1, 1);
       this.body.velocity.x = 100;
       this.animations.play('run', 20);
-    } else if (this.cursors.left.isDown) {
+    } else if (this.keyboard.left.isDown) {
       this.scale.setTo(-1, 1);
       this.body.velocity.x = -100;
       this.animations.play('run', 20);
@@ -65,10 +59,10 @@ export default class Player extends Prefab {
       this.body.velocity.x = 0;
     }
 
-    if (this.cursors.down.isDown) {
+    if (this.keyboard.down.isDown) {
       this.body.velocity.y = 100;
       this.animations.play('run', 20);
-    } else if (this.cursors.up.isDown) {
+    } else if (this.keyboard.up.isDown) {
       this.body.velocity.y = -100;
       this.animations.play('run', 20);
     } else {
