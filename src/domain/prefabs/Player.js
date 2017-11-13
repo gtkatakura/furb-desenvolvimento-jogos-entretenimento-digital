@@ -9,6 +9,20 @@ export default class Player extends Creature {
 
     this.animations.add('run', [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]);
     this.game.camera.follow(this);
+    this.life = 3;
+  }
+
+  tookDamage() {
+    this.life--;
+
+    if (this.life === 0) {
+      this.gameOver();
+    }
+  }
+
+  gameOver() {
+    this.state.phase.destroy();
+    this.game.state.start('GameOver');
   }
 
   enterDoor(player, door) {

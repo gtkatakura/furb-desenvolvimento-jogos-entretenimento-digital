@@ -14,7 +14,7 @@ export default class Creature extends Prefab {
       this.state.game.physics.arcade.collide(this, collision);
     }
 
-    for (const enemy of (this.state.groups.enemys.objects || { objects: [] })) {
+    for (const enemy of (this.state.groups.enemys || { objects: [] }).objects) {
       this.state.game.physics.arcade.collide(this, enemy);
     }
 
