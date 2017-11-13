@@ -110,6 +110,30 @@
                  "width":32,
                  "x":448,
                  "y":60
+                }, 
+                {
+                 "gid":4599,
+                 "height":32,
+                 "id":4,
+                 "name":"",
+                 "properties":
+                    {
+                     "frameIndex":70,
+                     "group":"enemys",
+                     "texture":"goblin"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"int",
+                     "group":"string",
+                     "texture":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":128,
+                 "y":416
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -117,7 +141,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":4,
+ "nextobjectid":5,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.0.2",
@@ -237,6 +261,19 @@
          "name":"dungeon",
          "spacing":0,
          "tilecount":240,
+         "tileheight":32,
+         "tilewidth":32
+        }, 
+        {
+         "columns":10,
+         "firstgid":4639,
+         "image":"..\/characteres\/goblin\/sprite.png",
+         "imageheight":320,
+         "imagewidth":320,
+         "margin":0,
+         "name":"goblin",
+         "spacing":0,
+         "tilecount":100,
          "tileheight":32,
          "tilewidth":32
         }],

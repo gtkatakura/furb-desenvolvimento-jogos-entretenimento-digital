@@ -8,6 +8,7 @@ export default class LoadingState extends Phaser.State {
     this.level = level;
 
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
+    this.game.physics.arcade.setBoundsToWorld();
 
     this.cursors = {
       up: this.game.input.keyboard.addKey(Phaser.Keyboard.W),
@@ -36,6 +37,7 @@ export default class LoadingState extends Phaser.State {
     }
 
     this.load.spritesheet('rogue', 'assets/characteres/rogue/sprite.png', 32, 32);
+    this.load.spritesheet('goblin', 'assets/characteres/goblin/sprite.png', 32, 32);
   }
 
   create() {

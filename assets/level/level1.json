@@ -113,7 +113,7 @@
                 }, 
                 {
                  "gid":339,
-                 "height":0,
+                 "height":32,
                  "id":12,
                  "name":"Gate",
                  "properties":
@@ -133,9 +133,9 @@
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":0,
+                 "width":32,
                  "x":448,
-                 "y":320
+                 "y":352
                 }],
          "opacity":1,
          "properties":

@@ -1,12 +1,9 @@
-import Prefab from './Prefab';
+import Creature from './Creature';
 import KeyboardFactory from './player/KeyboardFactory';
 
-export default class Player extends Prefab {
+export default class Player extends Creature {
   constructor(...params) {
     super(...params);
-
-    this.anchor.setTo(0.5);
-    this.body.immovable = false;
 
     this.keyboard = KeyboardFactory(this.game.input.keyboard);
 
@@ -34,16 +31,13 @@ export default class Player extends Prefab {
   }
 
   update() {
-    for (const collision of this.state.collisions) {
-      this.state.game.physics.arcade.collide(this, collision);
-    }
+    super.update();
 
     for (const door of (this.state.groups.doors || { objects: [] }).objects) {
       this.state.game.physics.arcade.overlap(this, door, this.enterDoor, null, this);
     }
 
     for (const gate of (this.state.groups.gates || { objects: [] }).objects) {
-      this.state.game.physics.arcade.collide(this, gate);
       this.openGate(gate);
     }
 
