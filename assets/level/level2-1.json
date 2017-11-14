@@ -6,7 +6,7 @@
          "name":"background",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":16,
          "x":0,
          "y":0
@@ -17,18 +17,18 @@
          "name":"maze",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":16,
          "x":0,
          "y":0
         }, 
         {
-         "data":[50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 0, 66, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 0, 82, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 50, 50, 50, 50, 50, 50, 0, 0, 0, 50, 50, 50, 50, 50, 50, 66, 66, 66, 66, 66, 66, 66, 0, 95, 0, 66, 66, 66, 66, 66, 66],
+         "data":[50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 0, 66, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 0, 82, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 50, 50, 50, 50, 50, 50, 52, 0, 54, 50, 50, 50, 50, 50, 50, 66, 66, 66, 66, 66, 66, 66, 68, 95, 70, 66, 66, 66, 66, 66, 66],
          "height":18,
          "name":"walls",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":16,
          "x":0,
          "y":0
@@ -39,7 +39,7 @@
          "name":"breakable",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":16,
          "x":0,
          "y":0
@@ -50,7 +50,7 @@
          "name":"doors",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":16,
          "x":0,
          "y":0
@@ -61,7 +61,7 @@
          "name":"decoration",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":16,
          "x":0,
          "y":0
@@ -75,6 +75,20 @@
                  "height":32,
                  "id":34,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"249",
+                     "group":"boxes",
+                     "texture":"castle",
+                     "uniqueId":"box1"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -87,6 +101,20 @@
                  "height":32,
                  "id":37,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"249",
+                     "group":"boxes",
+                     "texture":"castle",
+                     "uniqueId":"box2"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -99,6 +127,20 @@
                  "height":32,
                  "id":39,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"249",
+                     "group":"boxes",
+                     "texture":"castle",
+                     "uniqueId":"box3"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -111,6 +153,20 @@
                  "height":32,
                  "id":40,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"249",
+                     "group":"boxes",
+                     "texture":"castle",
+                     "uniqueId":"box5"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -123,6 +179,20 @@
                  "height":32,
                  "id":42,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"249",
+                     "group":"boxes",
+                     "texture":"castle",
+                     "uniqueId":"box4"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -135,6 +205,20 @@
                  "height":32,
                  "id":43,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"32",
+                     "group":"chests",
+                     "texture":"items",
+                     "uniqueId":"chest1"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -147,6 +231,20 @@
                  "height":32,
                  "id":51,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"209",
+                     "group":"gates",
+                     "texture":"town",
+                     "uniqueId":"gate3"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -159,6 +257,20 @@
                  "height":32,
                  "id":54,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"253",
+                     "group":"statues",
+                     "texture":"mountains",
+                     "uniqueId":"statue2"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -171,6 +283,20 @@
                  "height":32,
                  "id":56,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"253",
+                     "group":"statues",
+                     "texture":"mountains",
+                     "uniqueId":"statue4"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -183,6 +309,20 @@
                  "height":32,
                  "id":57,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"237",
+                     "group":"statues",
+                     "texture":"mountains",
+                     "uniqueId":"statue1"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -195,6 +335,20 @@
                  "height":32,
                  "id":58,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"237",
+                     "group":"statues",
+                     "texture":"mountains",
+                     "uniqueId":"statue3"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -207,6 +361,20 @@
                  "height":32,
                  "id":60,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"552",
+                     "group":"machines",
+                     "texture":"textures",
+                     "uniqueId":"generator1"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -219,6 +387,20 @@
                  "height":32,
                  "id":61,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"553",
+                     "group":"machines",
+                     "texture":"textures",
+                     "uniqueId":"generator2"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -227,34 +409,24 @@
                  "y":472.175284920411
                 }, 
                 {
-                 "gid":4381,
-                 "height":32,
-                 "id":62,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":416.034943957803,
-                 "y":443.151172647641
-                }, 
-                {
-                 "gid":4382,
-                 "height":32,
-                 "id":63,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":445.175284920411,
-                 "y":441.151172647641
-                }, 
-                {
                  "gid":1990,
                  "height":32,
                  "id":66,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"9",
+                     "group":"machines",
+                     "texture":"scifi",
+                     "uniqueId":"interruptor1"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -267,6 +439,20 @@
                  "height":32,
                  "id":67,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"39",
+                     "group":"machines",
+                     "texture":"scifi",
+                     "uniqueId":"interruptor2"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -279,6 +465,20 @@
                  "height":32,
                  "id":68,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"39",
+                     "group":"items",
+                     "texture":"items",
+                     "uniqueId":"item2"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -291,6 +491,20 @@
                  "height":32,
                  "id":69,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"48",
+                     "group":"items",
+                     "texture":"items",
+                     "uniqueId":"item1"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -303,6 +517,20 @@
                  "height":32,
                  "id":75,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"56",
+                     "group":"items",
+                     "texture":"industrial",
+                     "uniqueId":"gear1"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -315,6 +543,20 @@
                  "height":32,
                  "id":76,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"86",
+                     "group":"items",
+                     "texture":"industrial",
+                     "uniqueId":"gear2"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -327,6 +569,20 @@
                  "height":32,
                  "id":78,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"82",
+                     "group":"powerups",
+                     "texture":"items",
+                     "uniqueId":"powerup1"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -335,34 +591,24 @@
                  "y":223.432234432234
                 }, 
                 {
-                 "gid":78,
-                 "height":32,
-                 "id":85,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":224.665096807954,
-                 "y":576.099947671376
-                }, 
-                {
-                 "gid":62,
-                 "height":32,
-                 "id":86,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":225.152799581371,
-                 "y":544.004186289901
-                }, 
-                {
                  "gid":63,
                  "height":32,
                  "id":87,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"52",
+                     "group":"gates",
+                     "texture":"castle",
+                     "uniqueId":"gate1"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -375,36 +621,26 @@
                  "height":32,
                  "id":88,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"68",
+                     "group":"gates",
+                     "texture":"castle",
+                     "uniqueId":"gate2"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":32,
                  "x":257.015698587127,
                  "y":576.261643118786
-                }, 
-                {
-                 "gid":64,
-                 "height":32,
-                 "id":89,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":285.3663003663,
-                 "y":542.911041339613
-                }, 
-                {
-                 "gid":80,
-                 "height":32,
-                 "id":90,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":285.59916274202,
-                 "y":576.006802721088
                 }, 
                 {
                  "gid":51,
@@ -447,6 +683,20 @@
                  "height":32,
                  "id":97,
                  "name":"",
+                 "properties":
+                    {
+                     "frameIndex":"209",
+                     "group":"gates",
+                     "texture":"town",
+                     "uniqueId":"gate4"
+                    },
+                 "propertytypes":
+                    {
+                     "frameIndex":"string",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -460,7 +710,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":99,
+ "nextobjectid":102,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.0.3",
