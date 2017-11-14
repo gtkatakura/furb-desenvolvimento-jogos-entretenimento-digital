@@ -108,8 +108,8 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":192,
-                 "y":417
+                 "x":160,
+                 "y":415
                 }, 
                 {
                  "gid":4599,
@@ -118,12 +118,14 @@
                  "name":"",
                  "properties":
                     {
+                     "direction":"left",
                      "frameIndex":70,
                      "group":"enemys",
                      "texture":"goblin"
                     },
                  "propertytypes":
                     {
+                     "direction":"string",
                      "frameIndex":"int",
                      "group":"string",
                      "texture":"string"
@@ -132,8 +134,34 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":128,
+                 "x":191,
                  "y":416
+                }, 
+                {
+                 "gid":4599,
+                 "height":32,
+                 "id":5,
+                 "name":"",
+                 "properties":
+                    {
+                     "direction":"right",
+                     "frameIndex":70,
+                     "group":"enemys",
+                     "texture":"goblin"
+                    },
+                 "propertytypes":
+                    {
+                     "direction":"string",
+                     "frameIndex":"int",
+                     "group":"string",
+                     "texture":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":129,
+                 "y":415
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -141,7 +169,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":5,
+ "nextobjectid":6,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.0.2",

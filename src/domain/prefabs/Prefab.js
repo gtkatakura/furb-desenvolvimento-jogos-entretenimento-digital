@@ -14,4 +14,24 @@ export default class Player extends Phaser.Sprite {
     group.add(this);
     group.objects.push(this);
   }
+
+  distanceTo(object) {
+    return this.game.physics.arcade.distanceBetween(this, object);
+  }
+
+  collide(objects, collideCallback = _.constant(true), processCallback = _.constant(true)) {
+    const callback = (ignored, ...args) => collideCallback.apply(this, args);
+
+    for (const object of _.flatten([objects])) {
+      this.state.game.physics.arcade.collide(this, object, callback, processCallback);
+    }
+  }
+
+  overlap(objects, overlapCallback = _.constant(true), processCallback = _.constant(true)) {
+    const callback = (ignored, ...args) => overlapCallback.apply(this, args);
+
+    for (const object of _.flatten([objects])) {
+      this.state.game.physics.arcade.overlap(this, object, callback, processCallback);
+    }
+  }
 }
