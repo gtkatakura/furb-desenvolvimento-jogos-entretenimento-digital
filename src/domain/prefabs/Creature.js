@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import Prefab from './Prefab';
 
 export default class Creature extends Prefab {
@@ -10,16 +11,7 @@ export default class Creature extends Prefab {
   }
 
   update() {
-    for (const collision of this.state.collisions) {
-      this.state.game.physics.arcade.collide(this, collision);
-    }
-
-    for (const enemy of (this.state.groups.enemys.objects || { objects: [] })) {
-      this.state.game.physics.arcade.collide(this, enemy);
-    }
-
-    for (const gate of (this.state.groups.gates || { objects: [] }).objects) {
-      this.state.game.physics.arcade.collide(this, gate);
-    }
+    this.collide(this.state.collisions);
+    this.collide(_.get(this.state.groups.gates, 'objects'));
   }
 }

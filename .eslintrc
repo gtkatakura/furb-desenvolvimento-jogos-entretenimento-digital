@@ -3,7 +3,8 @@
   "rules": {
     "arrow-parens": "off",
     "react/jsx-filename-extension": "off",
-    "no-restricted-syntax": "off"
+    "no-restricted-syntax": "off",
+    "no-plusplus": "off"
   },
   "env": {
     "browser": true

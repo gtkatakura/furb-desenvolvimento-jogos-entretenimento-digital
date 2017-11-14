@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import Creature from './Creature';
 import KeyboardFactory from './player/KeyboardFactory';
 
@@ -9,15 +10,29 @@ export default class Player extends Creature {
 
     this.animations.add('run', [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]);
     this.game.camera.follow(this);
+    this.life = 3;
   }
 
-  enterDoor(player, door) {
+  tookDamage() {
+    this.life--;
+
+    if (this.life === 0) {
+      this.gameOver();
+    }
+  }
+
+  gameOver() {
+    this.state.phase.destroy();
+    this.game.state.start('GameOver');
+  }
+
+  enterDoor(door) {
     this.state.phase.destroy();
     this.game.state.start('BootState', true, false, door.properties.targetLevel);
   }
 
   openGate(gate) {
-    if (this.state.game.physics.arcade.distanceBetween(this, gate) < this.height && this.keyboard.enter.isDown) {
+    if (this.distanceTo(gate) < this.height && this.keyboard.enter.isDown) {
       this.killGate(gate);
     }
   }
@@ -33,9 +48,8 @@ export default class Player extends Creature {
   update() {
     super.update();
 
-    for (const door of (this.state.groups.doors || { objects: [] }).objects) {
-      this.state.game.physics.arcade.overlap(this, door, this.enterDoor, null, this);
-    }
+    this.collide(_.get(this.state.groups.enemys, 'objects'));
+    this.overlap(_.get(this.state.groups.doors, 'objects'), this.enterDoor);
 
     for (const gate of (this.state.groups.gates || { objects: [] }).objects) {
       this.openGate(gate);
