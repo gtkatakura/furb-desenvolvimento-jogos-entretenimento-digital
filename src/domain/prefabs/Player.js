@@ -31,16 +31,64 @@ export default class Player extends Creature {
     this.game.state.start('BootState', true, false, door.properties.targetLevel);
   }
 
-  openGate(gate) {
-    if (this.distanceTo(gate) < this.height && this.keyboard.enter.isDown) {
-      this.killGate(gate);
+  interaction(object) {
+    if (this.distanceTo(object) < (this.height + object.height) && this.keyboard.enter.isDown) {
+      if (object.properties.actionEnable) {
+        const uniqueId = object.properties.actionTarget || object.properties.uniqueId;
+
+        if (object.properties.action === 'kill') {
+          this.killById(uniqueId);
+        }
+
+        if (object.properties.action === 'enable') {
+          this.showMessage(object, object.properties.actionText);
+          this.enableActions(uniqueId);
+        }
+      } else {
+        this.showMessage(object, object.properties.actionDisableText);
+      }
     }
   }
 
-  killGate(pieceOfGate) {
-    for (const gate of this.state.groups.gates.objects) {
-      if (gate.properties.uniqueId === pieceOfGate.properties.uniqueId) {
-        gate.kill();
+  showMessage(object, message) {
+    if (!message) {
+      return;
+    }
+
+    const style = {
+      font: '14px Arial',
+      fill: '#ffffff',
+    };
+
+    let x = message.length * 7;
+
+    if (object.position.x <= this.game.world.width / 2) {
+      x = object.position.x + object.width;
+    } else {
+      x = object.position.x - x;
+    }
+
+    const text = this.game.add.text(x, object.position.y, message, style);
+
+    setTimeout(() => text.kill(), 5000);
+  }
+
+  allObjects() {
+    return _.flatten(_.map(Object.values(this.state.groups), 'objects'));
+  }
+
+  enableActions(uniqueId) {
+    for (const object of this.allObjects()) {
+      if (object.properties.uniqueId === uniqueId) {
+        object.properties.actionEnable = true;
+      }
+    }
+  }
+
+  killById(uniqueId) {
+    for (const object of this.allObjects()) {
+      if (object.properties.uniqueId === uniqueId) {
+        object.kill();
       }
     }
   }
@@ -49,10 +97,11 @@ export default class Player extends Creature {
     super.update();
 
     this.collide(_.get(this.state.groups.enemys, 'objects'));
+    this.collide(_.get(this.state.groups.boxes, 'objects'));
     this.overlap(_.get(this.state.groups.doors, 'objects'), this.enterDoor);
 
-    for (const gate of (this.state.groups.gates || { objects: [] }).objects) {
-      this.openGate(gate);
+    for (const object of this.state.objectsWithAction) {
+      this.interaction(object);
     }
 
     if (this.keyboard.right.isDown) {

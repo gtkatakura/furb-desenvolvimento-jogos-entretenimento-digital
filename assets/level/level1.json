@@ -61,63 +61,13 @@
                 }, 
                 {
                  "gid":339,
-                 "height":0,
-                 "id":9,
-                 "name":"Gate",
-                 "properties":
-                    {
-                     "frameIndex":98,
-                     "group":"gates",
-                     "texture":"prison",
-                     "uniqueId":"gate_1"
-                    },
-                 "propertytypes":
-                    {
-                     "frameIndex":"int",
-                     "group":"string",
-                     "texture":"string",
-                     "uniqueId":"string"
-                    },
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":480,
-                 "y":320
-                }, 
-                {
-                 "gid":339,
-                 "height":0,
-                 "id":11,
-                 "name":"Gate",
-                 "properties":
-                    {
-                     "frameIndex":98,
-                     "group":"gates",
-                     "texture":"prison",
-                     "uniqueId":"gate_1"
-                    },
-                 "propertytypes":
-                    {
-                     "frameIndex":"int",
-                     "group":"string",
-                     "texture":"string",
-                     "uniqueId":"string"
-                    },
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":512,
-                 "y":320
-                }, 
-                {
-                 "gid":339,
                  "height":32,
                  "id":12,
                  "name":"Gate",
                  "properties":
                     {
+                     "action":"kill",
+                     "actionEnable":true,
                      "frameIndex":98,
                      "group":"gates",
                      "texture":"prison",
@@ -125,6 +75,8 @@
                     },
                  "propertytypes":
                     {
+                     "action":"string",
+                     "actionEnable":"bool",
                      "frameIndex":"int",
                      "group":"string",
                      "texture":"string",
@@ -135,6 +87,66 @@
                  "visible":true,
                  "width":32,
                  "x":448,
+                 "y":352
+                }, 
+                {
+                 "gid":339,
+                 "height":32,
+                 "id":16,
+                 "name":"Gate",
+                 "properties":
+                    {
+                     "action":"kill",
+                     "actionEnable":true,
+                     "frameIndex":98,
+                     "group":"gates",
+                     "texture":"prison",
+                     "uniqueId":"gate_1"
+                    },
+                 "propertytypes":
+                    {
+                     "action":"string",
+                     "actionEnable":"bool",
+                     "frameIndex":"int",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":512,
+                 "y":352
+                }, 
+                {
+                 "gid":339,
+                 "height":32,
+                 "id":17,
+                 "name":"Gate",
+                 "properties":
+                    {
+                     "action":"kill",
+                     "actionEnable":true,
+                     "frameIndex":98,
+                     "group":"gates",
+                     "texture":"prison",
+                     "uniqueId":"gate_1"
+                    },
+                 "propertytypes":
+                    {
+                     "action":"string",
+                     "actionEnable":"bool",
+                     "frameIndex":"int",
+                     "group":"string",
+                     "texture":"string",
+                     "uniqueId":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":480,
                  "y":352
                 }],
          "opacity":1,
@@ -235,7 +247,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":13,
+ "nextobjectid":18,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.0.2",

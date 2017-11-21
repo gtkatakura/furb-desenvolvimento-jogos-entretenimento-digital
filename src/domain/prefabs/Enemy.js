@@ -33,7 +33,13 @@ export default class Enemy extends Creature {
       return;
     }
 
-    this.collide(_.get(this.state.groups.enemys, 'objects'), this.switchDirection);
+    for (const object of _.flatten([_.get(this.state.groups.enemys, 'objects')])) {
+      this.state.game.physics.arcade.collide(this, object, (object1, object2) => {
+        object1.switchDirection();
+        object2.switchDirection();
+      });
+    }
+
     this.collide(_.get(this.state.groups.players, 'objects'), this.attack);
 
     if (this.direction === 'right') {
