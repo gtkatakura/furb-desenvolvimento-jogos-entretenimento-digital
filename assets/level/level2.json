@@ -638,7 +638,8 @@
                  "properties":
                     {
                      "frameIndex":"52",
-                     "group":"gates",
+                     "group":"doors",
+                     "targetLevel":"level3",
                      "texture":"castle",
                      "uniqueId":"gate1"
                     },
@@ -646,6 +647,7 @@
                     {
                      "frameIndex":"string",
                      "group":"string",
+                     "targetLevel":"string",
                      "texture":"string",
                      "uniqueId":"string"
                     },
@@ -679,8 +681,8 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":254.015698587127,
-                 "y":576.261643118786
+                 "x":256,
+                 "y":576
                 }, 
                 {
                  "gid":3090,
@@ -727,8 +729,8 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":464.333333333333,
-                 "y":96.666666666667
+                 "x":466.333333333333,
+                 "y":96.0000000000004
                 }, 
                 {
                  "gid":4959,
