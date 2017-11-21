@@ -40,6 +40,8 @@ export default class Enemy extends Creature {
       });
     }
 
+    this.collide(_.get(this.state.groups.boxes, 'objects'), this.switchDirection);
+    this.collide(_.get(this.state.groups.gates, 'objects'), this.switchDirection);
     this.collide(_.get(this.state.groups.players, 'objects'), this.attack);
 
     if (this.direction === 'right') {

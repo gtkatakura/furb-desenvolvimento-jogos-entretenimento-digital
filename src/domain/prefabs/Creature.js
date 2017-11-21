@@ -12,6 +12,5 @@ export default class Creature extends Prefab {
 
   update() {
     this.collide(this.state.collisions);
-    this.collide(_.get(this.state.groups.gates, 'objects'));
   }
 }

@@ -96,6 +96,7 @@ export default class Player extends Creature {
   update() {
     super.update();
 
+    this.collide(_.get(this.state.groups.gates, 'objects'));
     this.collide(_.get(this.state.groups.enemys, 'objects'));
     this.collide(_.get(this.state.groups.boxes, 'objects'));
     this.overlap(_.get(this.state.groups.doors, 'objects'), this.enterDoor);
