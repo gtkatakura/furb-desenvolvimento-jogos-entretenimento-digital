@@ -14,6 +14,6 @@ export default class Game extends Phaser.Game {
     this.state.add(LoadingState.name, LoadingState);
     this.state.add(GameOver.name, GameOver);
 
-    this.state.start(BootState.name, true, false, 'level2');
+    this.state.start(BootState.name, true, false, 'level1');
   }
 }
