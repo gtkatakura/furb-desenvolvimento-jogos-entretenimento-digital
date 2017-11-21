@@ -3,7 +3,7 @@ import _ from 'lodash';
 
 export default class Player extends Phaser.Sprite {
   constructor({ state, object: { x, y, height, properties } }) {
-    super(state.game, x, y - height, properties.texture, properties.frameIndex);
+    super(state.game, x, y - height, properties.texture, +properties.frameIndex);
     _.assign(this, { state, properties });
 
     this.state.game.physics.arcade.enable(this);
@@ -13,6 +13,10 @@ export default class Player extends Phaser.Sprite {
 
     group.add(this);
     group.objects.push(this);
+
+    if (properties.action) {
+      this.state.objectsWithAction.push(this);
+    }
   }
 
   distanceTo(object) {

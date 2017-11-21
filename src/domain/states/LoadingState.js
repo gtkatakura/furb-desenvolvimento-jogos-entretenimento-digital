@@ -21,6 +21,7 @@ export default class LoadingState extends Phaser.State {
     this.groups = {};
     this.layers = {};
     this.collisions = [];
+    this.objectsWithAction = [];
   }
 
   preload() {
