@@ -32,6 +32,7 @@
     "react-hot-loader": "next"
   },
   "scripts": {
+    "start": "node app.js",
     "build": "webpack",
     "dev": "webpack-dev-server"
   }
